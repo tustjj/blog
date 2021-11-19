@@ -1,16 +1,12 @@
 ---
-name: Tails Azimuth
-avatar: /static/images/avatar.png
-occupation: Professor of Atmospheric Science
-company: Stanford University
-email: address@yoursite.com
+name: 荚佳
+avatar: https://tva1.sinaimg.cn/large/008qJ40Ely1gwklpt8xi5j30n00n00vu.jpg
+occupation: 必示-算法工程师
+company: 必示科技有限公司
+email: tustjj@gmail.com
 twitter: https://twitter.com/Twitter
 linkedin: https://www.linkedin.com
-github: https://github.com
+github: https://github.com/tustjj
 ---
 
-Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His research interests includes complexity modelling of tailwinds, headwinds and crosswinds.
-
-He leads the clean energy group which develops 3D air pollution-climate models, writes differential equation solvers, and manufactures titanium plated air ballons. In his free time he bakes raspberry pi.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+保持兴趣，做一名终身学习者。
