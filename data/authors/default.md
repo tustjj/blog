@@ -1,6 +1,6 @@
 ---
 name: 荚佳
-avatar: https://tva1.sinaimg.cn/large/008qJ40Ely1gwklpt8xi5j30n00n00vu.jpg
+avatar: https://tva1.sinaimg.cn/large/008qJ40Ely1gwkqgisihyj30e20e20sy.jpg
 occupation: 必示-算法工程师
 company: 必示科技有限公司
 email: tustjj@gmail.com
