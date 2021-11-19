@@ -4,10 +4,10 @@ const siteMetadata = {
   headerTitle: 'JJ Blog',
   description: '保持兴趣，永远年轻',
   language: 'zh-cn',
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
-  siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
+  siteUrl: 'https://www.tustjj.com',
+  siteRepo: 'https://github.com/tustjj/blog',
   siteLogo: '/static/images/logo.png',
-  image: '/static/images/avatar.png',
+  image: '/static/images/avatar.jpeg',
   socialBanner: '/static/images/twitter-card.png',
   email: 'tustjj@gmail.com',
   github: 'https://github.com/tustjj',
@@ -19,8 +19,8 @@ const siteMetadata = {
   analytics: {
     // supports plausible, simpleAnalytics or googleAnalytics
     plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
-    simpleAnalytics: false, // true or false
-    googleAnalyticsId: '', // e.g. UA-000000-2 or G-XXXXXXX
+    simpleAnalytics: true, // true or false
+    googleAnalyticsId: 'UA-000000-2', // e.g. UA-000000-2 or G-XXXXXXX
   },
   newsletter: {
     // supports mailchimp, buttondown, convertkit
@@ -57,7 +57,7 @@ const siteMetadata = {
       // https://utteranc.es/
       repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO,
       issueTerm: '', // supported options: pathname, url, title
-      label: '', // label (optional): Comment 💬
+      label: 'Comment', // label (optional): Comment 💬
       // theme example: github-light, github-dark, preferred-color-scheme
       // github-dark-orange, icy-dark, dark-blue, photon-dark, boxy-light
       theme: '',
