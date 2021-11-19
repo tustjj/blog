@@ -1,8 +1,8 @@
 const siteMetadata = {
-  title: 'JJ Blog',
-  author: '荚佳',
+  title: 'Liflong Learner',
+  author: 'Jia Jia',
   headerTitle: 'JJ Blog',
-  description: '保持兴趣，永远年轻',
+  description: '保持兴趣 永远年轻 永远热泪盈眶',
   language: 'zh-cn',
   siteUrl: 'https://www.tustjj.com',
   siteRepo: 'https://github.com/tustjj/blog',
@@ -19,8 +19,8 @@ const siteMetadata = {
   analytics: {
     // supports plausible, simpleAnalytics or googleAnalytics
     plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
-    simpleAnalytics: true, // true or false
-    googleAnalyticsId: 'UA-000000-2', // e.g. UA-000000-2 or G-XXXXXXX
+    simpleAnalytics: false, // true or false
+    googleAnalyticsId: '', // e.g. UA-000000-2 or G-XXXXXXX
   },
   newsletter: {
     // supports mailchimp, buttondown, convertkit
