@@ -1,7 +1,7 @@
 const siteMetadata = {
-  title: 'Liflong Learner',
+  title: 'Lifelong Learner',
   author: '荚佳',
-  headerTitle: '荚佳的博客',
+  headerTitle: 'Lifelong Learner',
   description: '保持兴趣 永远年轻 永远热泪盈眶',
   language: 'en-us',
   siteUrl: 'https://www.tustjj.com',
