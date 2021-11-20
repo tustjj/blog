@@ -3,7 +3,7 @@ const siteMetadata = {
   author: 'Jia Jia',
   headerTitle: 'JJ Blog',
   description: '保持兴趣 永远年轻 永远热泪盈眶',
-  language: 'zh-cn',
+  language: 'en-us',
   siteUrl: 'https://www.tustjj.com',
   siteRepo: 'https://github.com/tustjj/blog',
   siteLogo: '/static/images/logo.png',
@@ -15,7 +15,7 @@ const siteMetadata = {
   facebook: 'https://facebook.com',
   youtube: 'https://youtube.com',
   linkedin: 'https://www.linkedin.com',
-  locale: 'zh-cn',
+  locale: 'en-us',
   analytics: {
     // supports plausible, simpleAnalytics or googleAnalytics
     plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
