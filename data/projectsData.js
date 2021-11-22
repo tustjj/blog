@@ -8,12 +8,10 @@ const projectsData = [
     href: 'https://www.google.com',
   },
   {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten handphones with this simple yet affordable solution.`,
-    imgSrc: '/static/images/time-machine.jpg',
-    href: '/blog/the-time-machine',
+    title: '疾风计划',
+    description: `疾风计划设置(11+2)任务模式，涵盖11门必修课+2门选修课，专业选修课可根据自身兴趣在选课表中任选。`,
+    imgSrc: '/static/images/blastPlan/hero.png',
+    href: '/blog/toList/blast-plan',
   },
 ]
 
