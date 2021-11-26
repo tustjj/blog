@@ -1,8 +1,8 @@
 const siteMetadata = {
   title: 'Lifelong Learner',
-  author: '荚佳',
+  author: 'tustjj',
   headerTitle: 'Lifelong Learner',
-  description: '保持兴趣 永远年轻 永远热泪盈眶',
+  description: '逆风的方向 更适合飞翔 我不怕千万人阻挡 只怕自己投降',
   language: 'en-us',
   siteUrl: 'https://www.tustjj.com',
   siteRepo: 'https://github.com/tustjj/blog',
