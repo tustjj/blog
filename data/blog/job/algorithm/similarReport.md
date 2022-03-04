@@ -14,23 +14,23 @@ summary: 比对当前报告与历史报告的多种特征，快速检索历史�
 
 报告A，报告B
 
-3. similarity = similarityScore - dissimilarityScore
-4. weightScores = similarity * weight(featureSize)
-6. max(weightScore) * maxScoreRate + sum(weightScores) / weightScores.size
+3. `similarity = similarityScore - dissimilarityScore`
+4. `weightScores = similarity * weight(featureSize)`
+6. `max(weightScore) * maxScoreRate + sum(weightScores) / weightScores.size`
 
 ## 相似度计算
 
 关键字集合：Set
 
-1. commonSet = ASet & BSet  
-2. diffSet = ASet - BSet
+1. `commonSet = ASet & BSet`  
+2. `diffSet = ASet - BSet`
 
 关键字集合重合度越高，则相似度越高，相似度取值范围为 0 ~ 1
-    similarityScore = jaccard(ASet, BSet)
+    `similarityScore = jaccard(ASet, BSet)`
     
 ### Jaccard index、并交比、Jaccard similarity coefficient
 
-度量有限样本集合的相似度，其定义为两个集合交集大小与并集大小的比例。如果A和B完全重合，就有J(A,B)=1
+度量有限样本集合的相似度，其定义为两个集合交集大小与并集大小的比例。如果A和B完全重合，就有`J(A,B)=1`
 
 更多：Jaccard Distance，用于度量样本集之间的不相似度，其定义为1 - J(A,B)
     
@@ -39,19 +39,19 @@ summary: 比对当前报告与历史报告的多种特征，快速检索历史�
 告警数量：alertCount
     
 A告警数量比B告警数量越多，不相似度越高，不相似度取值范围为 0 ~ 0.25
-    dissimilarityScore = Math.min(Math.abs(AAlertCount - BAlertCount) / BAlertCount, 1) * 0.25
+    `dissimilarityScore = Math.min(Math.abs(AAlertCount - BAlertCount) / BAlertCount, 1) * 0.25`
    
 ## 分数权重计算，weight
 
 当前特征约多，则权重越高，取值范围为 0.5 ~ 1
 
-featureSizes = [1, 1, 2, 2, 0, 3, 1]
-minSize = 1
-maxSize = 3
+`featureSizes = [1, 1, 2, 2, 0, 3, 1]`
+`minSize = 1`
+`maxSize = 3`
 
-如果 (maxSize - minSize) <= 1 则权重为1
-否则 log(featureSize) / log(maxSize * maxSize) + 0.5，输出范围为 0 ~ 1
-注：log(n) / log(n * n) = 0.5，这就意味着最大长度的特征的权重为1，其他权重依次递减，最低为0.5
+如果` (maxSize - minSize) <= 1` 则权重为1
+否则` log(featureSize) / log(maxSize * maxSize) + 0.5`，输出范围为 0 ~ 1
+注：`log(n) / log(n * n) = 0.5`，这就意味着最大长度的特征的权重为1，其他权重依次递减，最低为0.5
 
 ## 规律性
 
