@@ -1,0 +1,21 @@
+---
+title: 'Kafka使用手册'
+date: '2022-03-07'
+lastmod: '2022-03-07'
+tags: ['kafka', '使用手册']
+draft: false
+summary: 'Kafka是一个流处理平台，目标是为处理实时数据提供一个统一、高吞吐、低延迟的平台'
+authors: ['default']
+layout: PostSimple
+---
+
+# 简介
+
+<TOCInline toc={props.toc} exclude="简介" toHeading={2}/>
+
+[kafka](https://kafka.apache.org/) Kafka是由Apache软件基金会开发的一个开源流处理平台，由Scala和Java编写。该项目的目标是为处理实时数据提供一个统一、高吞吐、低延迟的平台。
+
+## 常用命令
+
+- `生产数据` - kafka/bin/kafka-console-producer.sh -broker-list ip:port --topic topic_name < source.log
+- `从头开始消费数据` - kafka/bin/kafka-console-consumer.sh --bootstrap-server ip:port --topic topic_name --from-beginning
