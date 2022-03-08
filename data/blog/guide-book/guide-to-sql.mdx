@@ -1,0 +1,120 @@
+---
+title: 'SQL使用手册'
+date: '2022-03-08'
+lastmod: '2022-03-08'
+tags: ['SQL', '使用手册']
+draft: false
+summary: 'SQL使用手册'
+authors: ['default']
+layout: PostSimple
+---
+
+# 简介
+
+<TOCInline toc={props.toc} exclude="简介" toHeading={2} />
+
+[SQL](https://en.wikipedia.org/wiki/SQL)是一种特定的查询语言，向 DBMS 发送查询请求，查询结构化数据库，DBMS 返回查询结果。
+
+## 创建/删除/修改语句
+
+- 创建数据库/表/索引
+
+```bash
+CREATE DATABASE life;
+
+CREATE TABLE today
+(   id char(13) PRIMARY KEY,
+    name varchar(10) NOT NULL UNIQUE,
+    major varchar(30) NULL CHECK(major IN('基础课', '专业课', '选修课')),
+    age int DEFAULT 0,
+    birthday date NULL
+);
+
+CREATE INDEX <索引名> ON <表名><(列名)>;
+```
+
+- 删除数据库/表/索引
+
+```bash
+DROOP DATABASE life;
+DROP TABLE <表名>;
+DROP INDEX <索引名>;
+```
+
+- 创建复合主键的数据表
+
+```bash
+CREATE TABLE plan
+(   id char(4),
+    name char(4),
+    CONSTRAINT id_pk PRIMARY KEY(id, name)
+);
+```
+
+- 创建代理键的数据表
+
+```bash
+CREATE TABLE plan
+(   id serial,
+    CONSTRAINT id_pk PRIMARY KEY(id)
+);
+```
+
+- 创建带有外键的数据表
+
+```bash
+CREATE TABLE register
+(   id serial,
+    p_id int,
+    CONSTRAINT id_pk PRIMARY KEY(id),
+    CONSTRAINT id_fk FOREIGN KEY(id) REFERENCES plan(id)
+);
+```
+
+- 修改数据表
+
+```bash
+ALTER TABLE <表名> ADD <新列名称><数据类型>|[完整性约束];
+ALTER TABLE <表名> DROP COLUMN <列名>;
+ALTER TABLE <表名> DROP CONSTRAINT <完整性约束名>;
+ALTER TABLE <表名> RENAME TO <新表名>;
+ALTER TABLE <表名> RENAME <原列名> TO <新列名>;
+ALTER TABLE <表名> ALTER COLUMN <列名> TYPE<新的数据类型>;
+```
+
+## 更新数据语句
+
+- 插入数据到数据表
+
+```bash
+INSERT INTO <表名|视图名>[<列名表>] VALUES (列值表);
+```
+
+- 数据表更新数据
+
+```bash
+UPDATE <表名|视图名>
+SET <列名1>=<表达式1> [, <列名2>=<表达式2...]
+[WHERE <条件表达式>]
+```
+
+- 数据表删除数据
+
+```bash
+DELETE
+FROM <表名|视图名>
+[WHERE <条件表达式>];
+```
+
+## 查询数据语句
+
+- 查询语句
+
+```bash
+SELECT [ALL|DISTINCT] <目标列>[, <目标列> ...]
+[INTO <新表>]
+FROM <表名|视图名>[, <表名|视图名>...]
+[WHERE <条件表达式>]
+[GROUP BY <列名> [HAVING <条件表达式>]]
+[ORDER BY <列名> [ASC|DESC]]
+```
