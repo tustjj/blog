@@ -1,0 +1,38 @@
+---
+title: 'SQL使用手册'
+date: '2022-03-08'
+lastmod: '2022-03-08'
+tags: ['SQL', '使用手册']
+draft: false
+summary: 'Anaconda是一个用于科学计算的Python发行版，支持Linux, Mac, Windows, 包含了众多流行的科学计算、数据分析的Python包。安装了Anaconda，你就拥有了任意版本的python和各种包了。使用Anaconda，在同一个系统上维护不同的项目环境也很方便。'
+authors: ['default']
+layout: PostSimple
+---
+
+# 简介
+
+<TOCInline toc={props.toc} exclude="简介" toHeading={2}/>
+
+[SQL](https://en.wikipedia.org/wiki/SQL)是一种特定的查询语言，向DBMS发送查询请求，查询结构化数据库，DBMS返回查询结果。
+
+## 常用命令
+
+- 创建数据库/表/索引
+```bash
+CREATE DATABASE life
+
+CREATE TABLE today
+(   id char(13) PRIMARY KEY,
+    name varchar(10) NOT NULL UNIQUE,
+    major varchar(30) NULL CHECK(major IN('基础课', '专业课', '选修课')),
+    age int DEFAULT 0,
+    birthday date NULL
+);
+
+CREATE INDEX
+```
+
+- 删除数据库/表/索引
+```bash
+DROOP DATABASE life
+```
