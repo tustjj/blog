@@ -11,7 +11,7 @@ layout: PostSimple
 
 # 简介
 
-<TOCInline toc={props.toc} exclude="简介" toHeading={2} />
+<TOCInline toc={props.toc} exclude="简介" toHeading={2}/>
 
 [SQL](https://en.wikipedia.org/wiki/SQL)是一种特定的查询语言，向 DBMS 发送查询请求，查询结构化数据库，DBMS 返回查询结果。
 
@@ -49,8 +49,6 @@ DROP INDEX <索引名>;
 - `值唯一` - unique
 - `有效性检查` - check
 - `缺省值` - default
-
-- 删除数据库/表/索引
 
 ## 主键/复合主键/代理键/外键
 
@@ -106,8 +104,6 @@ SET <列名1>=<表达式1> [, <列名2>=<表达式2...]
 [WHERE <条件表达式>]
 ```
 
-- 数据表删除数据
-
 ```bash
 DELETE
 FROM <表名|视图名>
@@ -116,13 +112,77 @@ FROM <表名|视图名>
 
 ## 查询数据语句
 
-- 查询语句
-
 ```bash
 SELECT [ALL|DISTINCT] <目标列>[, <目标列> ...]
 [INTO <新表>]
 FROM <表名|视图名>[, <表名|视图名>...]
 [WHERE <条件表达式>]
 [GROUP BY <列名> [HAVING <条件表达式>]]
-[ORDER BY <列名> [ASC|DESC]]
+[ORDER BY <列名> [ASC|DESC]][, <列名> [ASC|DESC]]
+```
+
+### Where子句
+
+- `取值范围` - between .. and ..
+- `通配符` - 下划线(_)通配符代表一个未指定的字符，百分号(%)通配符代表一个多个未指定的字符。
+- `逻辑运算符` - and、or、not、in、not in。
+
+## 分组统计
+
+```bash
+SELECT 统计函数(目标列)
+FROM <表名|视图名>[, <表名|视图名>...]
+[WHERE <条件表达式>]
+[GROUP BY <目标列>
+[HAVING 条件]
+```
+
+### 内置函数
+
+- `聚合函数` - avg、count、min、max、sum
+- `算术函数`
+- `字符串函数`
+- `日期时间函数`
+- `数据类型转换函数`
+
+## 内连接
+
+```bash
+SELECT <目标列>[, <目标列>...]
+FROM <表名|视图名>
+WHERE <条件中嵌套另一关系表的select查询结果集>
+```
+
+```bash
+SELECT <目标列>[, <目标列>...]
+FROM <表名1>, <表名2>, ..., <表名n>
+WHERE <关系表之间的连接关联条件>
+```
+
+```bash
+SELECT <目标列>[, <目标列>...]
+FROM <表名1> JOIN <表名2> ON <连接条件>;
+```
+
+## 外连接
+
+- `左外连接` - left join
+- `右外连接` - right join
+- `全外连接` - full join
+
+## 视图操作
+
+```bash
+CREATE VIEW <视图名>[(列名1),(列名2),...] AS <SELECT查询>;
+DROP VIEW <视图名>;
+```
+
+## 数据控制操作
+
+```bash
+GRANT <权限列表> ON <数据库对象> TO <用户或角色> [ WITH GRANT OPTION];
+
+REVOKE <权限列表> ON <数据库对象> FROM <用户或角色>;
+
+DENY <权限列表> ON <数据库对象> TO <用户或角色>;
 ```
