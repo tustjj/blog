@@ -15,63 +15,75 @@ layout: PostSimple
 
 [SQL](https://en.wikipedia.org/wiki/SQL)是一种特定的查询语言，向 DBMS 发送查询请求，查询结构化数据库，DBMS 返回查询结果。
 
-## 创建/删除/修改语句
+## 基本数据类型
 
-- 创建数据库/表/索引
+- `字符` - char、varchar、text
+- `整数` - smallint、integer
+- `浮点数` - number(n,d)、float(n,d)、
+- `日期` - date、datetime
+- `货币` - money
+
+## 创建/删除数据库/表/索引
 
 ```bash
-CREATE DATABASE life;
+CREATE DATABASE <数据库名>;
+DROOP DATABASE <数据库名>;
 
-CREATE TABLE today
-(   id char(13) PRIMARY KEY,
-    name varchar(10) NOT NULL UNIQUE,
-    major varchar(30) NULL CHECK(major IN('基础课', '专业课', '选修课')),
-    age int DEFAULT 0,
-    birthday date NULL
+CREATE TABLE <表名>
+(  <列名1>    <数据类型>  [列完整性约束],
+   <列名1>    <数据类型>  [列完整性约束],
+   <列名1>    <数据类型>  [列完整性约束],
+   ……
 );
+DROP TABLE <表名>;
 
 CREATE INDEX <索引名> ON <表名><(列名)>;
-```
-
-- 删除数据库/表/索引
-
-```bash
-DROOP DATABASE life;
-DROP TABLE <表名>;
 DROP INDEX <索引名>;
 ```
 
-- 创建复合主键的数据表
+### 列完整性约束
+
+- `主键` - primary key
+- ``非空值` - not null
+- `空值` - null
+- `值唯一` - unique
+- `有效性检查` - check
+- `缺省值` - default
+
+- 删除数据库/表/索引
+
+## 主键/复合主键/代理键/外键
 
 ```bash
 CREATE TABLE plan
-(   id char(4),
-    name char(4),
-    CONSTRAINT id_pk PRIMARY KEY(id, name)
+(   <列名1>    <数据类型>  [列完整性约束],
+    CONSTRAINT <约束名> primary key(主键列)
 );
 ```
-
-- 创建代理键的数据表
 
 ```bash
 CREATE TABLE plan
-(   id serial,
-    CONSTRAINT id_pk PRIMARY KEY(id)
+(   <列名1>    <数据类型>  [列完整性约束],
+    CONSTRAINT <约束名> primary key(主键列, 主键列)
 );
 ```
 
-- 创建带有外键的数据表
+```bash
+CREATE TABLE plan
+(   <代理键列名>    <Serial数据类型>  not null,
+    <列名2>    <数据类型>  [列完整性约束],
+    CONSTRAINT <约束名> primary key(代理键列名)
+);
+```
 
 ```bash
 CREATE TABLE register
-(   id serial,
-    p_id int,
-    CONSTRAINT id_pk PRIMARY KEY(id),
-    CONSTRAINT id_fk FOREIGN KEY(id) REFERENCES plan(id)
+(   <列名1>    <数据类型>  [列完整性约束],
+    CONSTRAINT <约束名> foreign key(外键列)
 );
 ```
 
-- 修改数据表
+## 修改表结构
 
 ```bash
 ALTER TABLE <表名> ADD <新列名称><数据类型>|[完整性约束];
@@ -82,15 +94,11 @@ ALTER TABLE <表名> RENAME <原列名> TO <新列名>;
 ALTER TABLE <表名> ALTER COLUMN <列名> TYPE<新的数据类型>;
 ```
 
-## 更新数据语句
-
-- 插入数据到数据表
+## 数据操作语句
 
 ```bash
 INSERT INTO <表名|视图名>[<列名表>] VALUES (列值表);
 ```
-
-- 数据表更新数据
 
 ```bash
 UPDATE <表名|视图名>
